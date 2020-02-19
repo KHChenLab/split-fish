@@ -322,7 +322,7 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 
 * **Nigel Chou** - *main contributor* - (https://github.com/chousn)
 
-* **Mike Huang** - *contributed initial stitching pipeline* - (https://github.com/?)
+* **Mike Huang** - *contributed initial stitching pipeline* - (https://github.com/mikejhuang)
 
 * **Vipul Singhal** - *contributed LHS implementation* - (https://github.com/vipulsinghal02)
 
@@ -331,7 +331,7 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 
 ## License <a name="lic"></a>
 
-The software is available for academic and non-commercial research use. A provisional patent application for the method described in this manuscript has been filed. To obtain a licence for commercial use of the software and/or the patent, any interested parties should contact chenkh@gis.a-star.edu.sg
+The software is available for academic and non-commercial research use. A provisional patent application for the method described in this manuscript has been filed. To obtain a licence for commercial use, any interested parties should contact chenkh@gis.a-star.edu.sg
 
 
 ## Acknowledgments <a name="ack"></a>
