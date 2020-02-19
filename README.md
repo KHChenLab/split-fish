@@ -296,9 +296,9 @@ By default, all small spots are **rejected**. If a value is given, only spots wi
 
 ## Citations and links to libraries utilized <a name="cite"></a>
 
-* The pixel decoding approach, in particular the use of normalized vector distances to compare pixel vectors to codewords, was originally implemented here: https://github.com/ZhuangLab/MERFISH_analysis
+* The pixel decoding approach, in particular the use of normalized vector distances to compare pixel vectors to codewords, was originally implemented in MATLAB here: https://github.com/ZhuangLab/MERFISH_analysis
 
-* [ReadDax](utils/readClasses.py) and [WriteDax](utils/writeClasses.py) are modified versions of readers/writers for the `.dax` binary image format found in https://github.com/zhuanglab/storm-control, which is under the *MIT License*.
+* [WriteDax](utils/writeClasses.py) is a lightly modified version of data writer from https://github.com/ZhuangLab/storm-analysis/blob/master/storm_analysis/sa_library/datawriter.py, which is under the *MIT License*.
 
 * LHS implementation is from [PyDOE](https://pythonhosted.org/pyDOE/) which is under the *BSD License* (3-Clause). An unmodified version of the code for Latin-Hypercube sampling is [included in the "external" folder](external/doe_lhs.py) so that the user does not need to install the full PyDOE package.
 
