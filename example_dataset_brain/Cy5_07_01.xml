@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+  <acquisition validate="True">
+    <notes type="string"/>
+    <number_frames type="int">1</number_frames>
+    <stage_position type="custom">225.00,0.00</stage_position>
+    <version type="string">d255cbf32d87cd07b0506e2b2d32200143d215b0</version>
+  </acquisition>
+  <camera1 validate="True">
+    <AOIBinning type="string">1x1</AOIBinning>
+    <AOIHeight type="int">2048</AOIHeight>
+    <AOILeft type="int">1</AOILeft>
+    <AOITop type="int">1</AOITop>
+    <AOIWidth type="int">2048</AOIWidth>
+    <ExposureTime type="float">1.0</ExposureTime>
+    <FanSpeed type="string">On</FanSpeed>
+    <SensorCooling type="boolean">True</SensorCooling>
+    <SimplePreAmpGainControl type="string">High dynamic range (16-bit)</SimplePreAmpGainControl>
+    <default_max type="int">5000</default_max>
+    <default_min type="int">100</default_min>
+    <exposure_time type="float">0.99999012</exposure_time>
+    <extension type="string"/>
+    <flip_horizontal type="boolean">False</flip_horizontal>
+    <flip_vertical type="boolean">False</flip_vertical>
+    <fps type="float">0.9596499442673699</fps>
+    <saved type="boolean">True</saved>
+    <transpose type="boolean">True</transpose>
+    <x_bin type="int">1</x_bin>
+    <x_end type="int">256</x_end>
+    <x_pixels type="int">2048</x_pixels>
+    <x_start type="int">1</x_start>
+    <y_bin type="int">1</y_bin>
+    <y_end type="int">256</y_end>
+    <y_pixels type="int">2048</y_pixels>
+    <y_start type="int">1</y_start>
+  </camera1>
+  <display00 validate="False">
+    <camera1 validate="True">
+      <center_x type="float">561.0</center_x>
+      <center_y type="float">658.0</center_y>
+      <colortable type="string">ramp.ctbl</colortable>
+      <display_max type="int">65535</display_max>
+      <display_min type="int">1478</display_min>
+      <initialized type="boolean">True</initialized>
+      <scale type="int">-3</scale>
+      <sync type="int">0</sync>
+    </camera1>
+    <feed_name type="string">camera1</feed_name>
+  </display00>
+  <film validate="False">
+    <acq_mode type="string">fixed_length</acq_mode>
+    <auto_increment type="boolean">False</auto_increment>
+    <auto_shutters type="boolean">False</auto_shutters>
+    <extension type="string"/>
+    <filename type="string">Cy5</filename>
+    <filetype type="string">.dax</filetype>
+    <frames type="int">1</frames>
+    <want_bell type="boolean">True</want_bell>
+  </film>
+  <illumination validate="True">
+    <default_power type="custom">1.000,1.000,1.000,1.000,1.000,1.000</default_power>
+    <on_off_state type="custom">False,True,False,False,False,False</on_off_state>
+    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]]]</power_buttons>
+    <shutters type="string">C:\storm-control\storm_control\hal4000\shutters_default.xml</shutters>
+  </illumination>
+  <mosaic validate="False">
+    <flip_horizontal type="boolean">False</flip_horizontal>
+    <flip_vertical type="boolean">False</flip_vertical>
+    <obj1 type="custom">60x,0.115,0.0,0.0</obj1>
+    <objective type="string">obj1</objective>
+    <transpose type="boolean">True</transpose>
+  </mosaic>
+  <progressions validate="True">
+    <pfile_name type="string"/>
+    <use_progressions type="boolean">False</use_progressions>
+  </progressions>
+  <stage validate="True">
+    <large_step_size type="float">25.0</large_step_size>
+    <small_step_size type="float">5.0</small_step_size>
+  </stage>
+  <timing validate="True">
+    <time_base type="string">camera1</time_base>
+  </timing>
+</settings>
