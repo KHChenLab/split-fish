@@ -336,4 +336,5 @@ The software is available for academic and non-commercial research use. A provis
 
 ## Acknowledgments <a name="ack"></a>
 
+* Shyam Prabhakar
 * Jolene Goh
