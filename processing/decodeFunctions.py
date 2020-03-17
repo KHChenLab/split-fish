@@ -678,7 +678,7 @@ def groupPixelsIntoSpots(imgdata: ImageData,
             spot_count = 0
 
             gene_name = codebook_df.index[gene_index]
-            gene_codeword = codebook_df.loc[gene_name, bit_list]
+            gene_codeword = codebook_df.loc[gene_name, bit_list].values
             on_bits = np.nonzero(gene_codeword)[0]
             normalized_by = imgdata.normalization_vector[on_bits]
 

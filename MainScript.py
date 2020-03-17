@@ -139,7 +139,7 @@ qc_params_default["stages_to_save"] = [
     ("unitnormalized", None, True),
     ("decoded", None, False),
 ]
-# max of 28 bits, dont think anyone is using more than that
+# max of 28 bits
 # try to make the grid size close to the number of bits e.g. (3,6) for 16 bits
 qc_params_default["image_grid"] = (4, 7)
 
@@ -184,8 +184,7 @@ split_fish_file_params["codebook_filepath"] = os.path.join(
 split_fish_params = copy.copy(dory_default)
 
 # set the fovs to process. Don't try too many if still optimizing parameters
-
-# split_fish_params["fovs_to_process"] = [1, ]
+#split_fish_params["fovs_to_process"] = [1, ]
 split_fish_params["fovs_to_process"] = list(range(4))
 split_fish_params["num_bits"] = 26
 split_fish_params["bits_to_drop"] = []
@@ -410,7 +409,6 @@ for params in params_list:
 
     print(f"\ny and x dimensions: {ydim:d}, {xdim:d}\n\n")
 
-
     #
     # ====================================================================================
     #                  Create the GENE_DATA object (shared by all FOVs)
@@ -423,7 +421,6 @@ for params in params_list:
         num_bits=params["num_bits"],
         print_dataframe=True,
     )
-
 
     #
     # ====================================================================================

@@ -79,7 +79,7 @@ class LoadMsg(QMessageBox):
     """
     loading screen
     prints the path of the file being loaded
-    also shows a funny picture of jolene while waiting for file to load
+    also shows an image while waiting for file to load
     """
 
     def __init__(self):
@@ -136,7 +136,7 @@ class GeneViewerMainWidget(QDialog):
         self.setStyleSheet("QLabel {font-size: 12pt; "
                            "font-family: Arial }")
 
-        self.setWindowTitle('n00bViewer')
+        self.setWindowTitle('GeneViewer')
 
         #
         # variables
@@ -781,7 +781,7 @@ class GeneViewerMainWidget(QDialog):
                 # --------------
 
                 pixmap = QPixmap(
-                    "geneviewer_images/joleneloadingscreen.jpg",
+                    "geneviewer_images/Fishes_loading_screen.png",
                 )
                 splash = QSplashScreen(pixmap, Qt.WindowStaysOnTopHint)
                 splash.show()

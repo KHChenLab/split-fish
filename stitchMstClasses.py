@@ -1235,19 +1235,18 @@ if __name__ == "__main__":
     # Select parameter set
     # --------------------
 
-    datatype = "jolene"
+    datatype = "1"
 
     #
     # Define the different sets of parameters
     # ------------------------------------------------------------
     #
 
-    if datatype == "jolene":
+    if datatype == "1":
         microscope_type = "Dory"
         basebit = 14
         basetype = "Cy5"
-        # basehyb = 3
-        basehyb = 0  # for ovary data
+        basehyb = 0  
         display_vmax = 25000
         stage_pixel_matrix = 8 * np.array([[0, -1], [-1, 0]])
     else:
