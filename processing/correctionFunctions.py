@@ -52,7 +52,7 @@ def correctDistortion(imgdata: ImageData,
     reference_colour: str
         warp all other colours to match this colour
     calibration_path: str
-        full path of folder containing daybook calibration files (in csv format)
+        full path of folder containing chromatic calibration files (in csv format)
     """
 
     assert reference_colour in colour_mapping.values(), (
@@ -88,10 +88,10 @@ def correctDistortion(imgdata: ImageData,
                     "\nFound chromatic correction params file:", match.group(0)
                 )
 
-            daybook_fullpath = os.path.join(calibration_path, file)
+            params_csv_fullpath = os.path.join(calibration_path, file)
             colour_pair = (match.group(1), match.group(2))
 
-            pairs_tf_dict[colour_pair] = parseDaybook(daybook_fullpath)
+            pairs_tf_dict[colour_pair] = parseCsv(params_csv_fullpath)
 
     if verbose:
         print(f"Pairs transform dictionary:\n{pairs_tf_dict}")
@@ -136,11 +136,11 @@ def correctDistortion(imgdata: ImageData,
     imgdata.setArray("chrcorr", chrcorr_array)
 
 
-def parseDaybook(filepath: str,
+def parseCsv(filepath: str,
                  verbose: bool = True,
                  ) -> AffineTransform:
     """
-    parse daybook lateral chromatic shift output file
+    parse chromatic shift parameters from a .csv format file
     and generate affine matrix
 
     returns affine matrix ready for warping with skimage
@@ -160,8 +160,8 @@ def parseDaybook(filepath: str,
                 values_row = [float(value) for value in row]
                 break
 
-    assert title_row is not None, "title row for param values not found in daybook csv file"
-    assert values_row is not None, "row containing param values not found in daybook csv file"
+    assert title_row is not None, "title row for param values not found in csv file"
+    assert values_row is not None, "row containing param values not found in csv file"
 
     matrix = np.zeros((3, 3), dtype=np.float64)
     matrix[0, 0] = values_row[title_row.index("a_affine_parameter")]

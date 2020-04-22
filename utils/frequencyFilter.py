@@ -1,6 +1,5 @@
 """
-Make or load a butterworth band-pass filter
-for frequency space filtering
+Make or load a band-pass filter for frequency domain filtering
 
 nigel - updated 3 dec 19
 
@@ -16,7 +15,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
-def butter2d(low_cut: Union[float, None] = None,
+def filter2d(low_cut: Union[float, None] = None,
              high_cut: Union[float, None] = None,
              order: int = 1,
              filter_path: str = None,
@@ -43,7 +42,7 @@ def butter2d(low_cut: Union[float, None] = None,
     save: bool
         whether to save filter in data_path for future use
     order: int
-        order of the butterworth filter
+        how steeply the filter changes at the cutoff frequency
     image (2D ndarray), ydim, xdim:
         get dimension of image from the image provided, or
         directly specify y dimension (ydim) and x dimension (xdim)
@@ -56,7 +55,7 @@ def butter2d(low_cut: Union[float, None] = None,
     # Create a descriptive name for the filter from provided parameters
     # -----------------------------------------------------------------
 
-    filename = f"butter2d_order{order}"
+    filename = f"filter2d_order{order}"
 
     if low_cut is not None:
         filename += f"_lowcut_{low_cut}"
@@ -134,10 +133,6 @@ def butter2d(low_cut: Union[float, None] = None,
                                  out=zeros_array,
                                  where=where_to_operate)
 
-        # original equation:
-        # low_cut_mask = 1 / np.sqrt(
-        #     1 + (low_cut / np.sqrt((grid[0] - y_mid) ** 2 + (grid[1] - x_mid) ** 2)) ** (2 * order))
-
     frequency_mask = high_cut_mask * low_cut_mask
 
     # check for funny values
@@ -196,7 +191,7 @@ def butter2d(low_cut: Union[float, None] = None,
         figfilter.colorbar(filterplot, cax=cax)
 
         figfilter.suptitle(
-            _plotTitle("2D butterworth filter",
+            _plotTitle("2D FD filter",
                        frequency_mask,
                        high_cut, low_cut),
             fontname="arial", fontsize=14, fontweight="bold"
@@ -237,7 +232,7 @@ if __name__ == "__main__":
     # ---------------
     #
 
-    freq_filter = butter2d(
+    freq_filter = filter2d(
         400, 900,
         save=False,
         order=2,

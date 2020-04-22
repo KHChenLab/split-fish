@@ -207,8 +207,7 @@ if __name__ == "__main__":
     params = {}
 
     if microscope_type == "Dory":
-        # params["fovs_to_process"] = [0, 1, 2]
-        params["fovs_to_process"] = list(range(25))
+        params["fovs_to_process"] = list(range(4))
         params["fovstr_length"] = 2
         params["num_bits"] = 26
         params["hyb_list"] = list(range(13)) * 2

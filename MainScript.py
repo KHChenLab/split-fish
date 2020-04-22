@@ -1,5 +1,5 @@
 """
-test script for the revised ImageData class
+Main script and entry point for running analysis
 
 nigel Nov 19
 """
@@ -25,7 +25,7 @@ from utils.printFunctions import printParams, printParamsToFile, formatParamSetN
 from data_objects.imageData import ImageData, showImages, showRegistration
 from data_objects.geneData import GeneData
 
-from utils.frequencyFilter import butter2d
+from utils.frequencyFilter import filter2d
 
 from fileparsing.filesClasses import getFileParser
 from fileparsing.fovGridFunctions import generateFovGrid
@@ -74,7 +74,7 @@ shared_params = {}
 shared_params["fpkm_structname"] = "new"  # only for old FPKM format
 shared_params["distance_threshold"] = 0.3321
 # 0.517 for hamming weight 4, 0.417 for hamming weight 3 , 0.3321 for hamming weight 2
-shared_params["bw_filter_order"] = 2
+shared_params["filter_order"] = 2
 shared_params["correct_field"] = False
 shared_params["imgcolour_to_maskcolour"] = None
 shared_params["correct_distortion"] = False
@@ -139,7 +139,7 @@ qc_params_default["stages_to_save"] = [
     ("unitnormalized", None, True),
     ("decoded", None, False),
 ]
-# max of 28 bits
+# max of 28 bits, dont think anyone is using more than that
 # try to make the grid size close to the number of bits e.g. (3,6) for 16 bits
 qc_params_default["image_grid"] = (4, 7)
 
@@ -184,7 +184,8 @@ split_fish_file_params["codebook_filepath"] = os.path.join(
 split_fish_params = copy.copy(dory_default)
 
 # set the fovs to process. Don't try too many if still optimizing parameters
-#split_fish_params["fovs_to_process"] = [1, ]
+
+# split_fish_params["fovs_to_process"] = [1, ]
 split_fish_params["fovs_to_process"] = list(range(4))
 split_fish_params["num_bits"] = 26
 split_fish_params["bits_to_drop"] = []
@@ -199,7 +200,7 @@ split_fish_params["type_to_colour"] = {
 }
 
 # filter parameters
-split_fish_params["bw_filter_order"] = 2
+split_fish_params["filter_order"] = 2
 split_fish_params["high_cut"] = None
 
 # this must be a list of valid stages
@@ -409,6 +410,7 @@ for params in params_list:
 
     print(f"\ny and x dimensions: {ydim:d}, {xdim:d}\n\n")
 
+
     #
     # ====================================================================================
     #                  Create the GENE_DATA object (shared by all FOVs)
@@ -421,6 +423,7 @@ for params in params_list:
         num_bits=params["num_bits"],
         print_dataframe=True,
     )
+
 
     #
     # ====================================================================================
@@ -510,11 +513,11 @@ for params in params_list:
             # Register, Filter and clip
             # -------------------------
 
-            freq_filter = butter2d(
+            freq_filter = filter2d(
                 low_cut=params["low_cut"],
                 high_cut=params["high_cut"],
                 filter_path=os.path.join(data_path, "filters"),
-                order=params["bw_filter_order"],
+                order=params["filter_order"],
                 xdim=xdim, ydim=ydim,
                 plot_filter=qc_params["plot_freq_filter"],
             )
