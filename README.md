@@ -338,7 +338,7 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 
 ## License <a name="lic"></a>
 
-Please see full license [here](license.md).
+See full license [here](license.md).
 
 
 ## Acknowledgments <a name="ack"></a>
