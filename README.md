@@ -338,7 +338,7 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 
 ## License <a name="lic"></a>
 
-The software is available for academic and non-commercial research use. A provisional patent application for the method described in this manuscript has been filed. To obtain a licence for commercial use, any interested parties should contact chenkh@gis.a-star.edu.sg
+Please see full license [here](license.md).
 
 
 ## Acknowledgments <a name="ack"></a>
