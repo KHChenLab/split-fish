@@ -350,4 +350,6 @@ See full license [here](license.md).
 
 ## Questions <a name='que'></a>
 
-Contact CHEN Kok Hao, chenkh at gis.a-star.edu.sg and CHOU Shijie Nigel, Nigel_Chou at gis.a-star.edu.sg
+Contact 
+* CHEN Kok Hao, chenkh at gis.a-star.edu.sg 
+* CHOU Shijie Nigel, Nigel_Chou at gis.a-star.edu.sg
