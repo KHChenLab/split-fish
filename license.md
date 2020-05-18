@@ -1,6 +1,6 @@
 **END-USER LICENSE AGREEMENT**
 
-**MULTIPLEXED FISH IMAGE ANLYSIS SOFTWARE**
+**MULTIPLEXED FISH IMAGE ANALYSIS SOFTWARE**
 
 PLEASE READ THIS END-USER LICENSE AGREEMENT (“EULA”) CAREFULLY. BY DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING THE PROVIDED SOFTWARE (“SOFTWARE” AS DEFINED BELOW), YOU AGREE TO THE TERMS OF THIS EULA. IF YOU DO NOT AGREE, PLEASE DO NOT DOWNLOAD, INSTALL, COPY OR OTHERWISE USE THE SOFTWARE. 
 
@@ -8,7 +8,7 @@ This EULA is a legal agreement between you (either an individual or, if acquired
 
 **1.** **LICENSE GRANTS, RESTRICTIONS AND LIMITATIONS.** 
 
-  **1.1**	**Software License.**  GIS grants you a non-transferable and non-exclusive license to use the Software subject to all terms and conditions of this EULA, and to make and use an unlimited number of copies of the Software, provided that such copies shall only be used for non-commercial research purposes and are not to be republished or distributed (either in hard copy or in electronic form) beyond your academic or research institution.  You may use the Software only to reproduce the experimental results described in “Highly Specific Multiplexed RNA Imaging in Tissues with Split-FISH" or to generate analysis results from your own experiments.  All rights not specifically granted to you by this EULA shall remain with GIS.  No rights are granted to you to sublicense, rent, or market the Software.  The Software is protected by copyright and other intellectual property laws and treaties. GIS or its suppliers own the title, copyright, and other intellectual property rights in the Software. The Software is licensed, not sold. No rights are granted to you under any patents, patent applications, trade secrets, or other proprietary rights.
+  **1.1**	**Software License.**  GIS grants you a non-transferable and non-exclusive license to use the Software subject to all terms and conditions of this EULA, and to make and use an unlimited number of copies of the Software, provided that such copies shall only be used for non-commercial research purposes and are not to be republished or distributed (either in hard copy or in electronic form) beyond your academic or research institution.  You may use the Software only to reproduce the experimental results described in “Highly Specific Multiplexed RNA Imaging in Tissues with Split-FISH" Jolene Jie Lin Goh, Nigel Chou, Wan Yi Seow, Norbert Ha, Chung Pui Paul Cheng, Yun-Ching Chang, Ziqing Winston Zhao, Kok Hao Chen. Nature Methods. (2020) or to generate analysis results from your own experiments.  All rights not specifically granted to you by this EULA shall remain with GIS.  No rights are granted to you to sublicense, rent, or market the Software.  The Software is protected by copyright and other intellectual property laws and treaties. GIS or its suppliers own the title, copyright, and other intellectual property rights in the Software. The Software is licensed, not sold. No rights are granted to you under any patents, patent applications, trade secrets, or other proprietary rights.
 
   **1.2** You may distribute the Software to faculty and staff solely for the use described in Section 1.1. You shall advise such faculty and/or staff that use of the Software is strictly governed by the terms and conditions of this EULA (regardless of any license agreement that may appear during an installation process) and is to be used solely pursuant to the use granted in Section 1.1 herein. Any faculty or staff who ceases its association with your academic or research institution shall not be permitted to use the Software without first obtaining a valid license for any such Software. 
 
@@ -28,4 +28,4 @@ Any translation of this License is done for local requirements and in the event 
 
 **CONTACT INFORMATION**
 
-If you have any questions about this EULA, or if you want to contact GIS for any reason, please direct all correspondence to: **Genome Institute of Singapore, 60 Biopolis St, Singapore 138672**. Legal notice shall be sent to the attention of **Chen Kok Hao**.
+If you have any questions about this EULA, or if you want to contact GIS for any reason, please direct all correspondence to: **Genome Institute of Singapore, 60 Biopolis St, Singapore 138672**. E-mail: CHEN Kok Hao <chenkh@gis.a-star.edu.sg> and CHOU Shijie Nigel <Nigel_Chou@gis.a-star.edu.sg>
