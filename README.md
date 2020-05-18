@@ -336,13 +336,18 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 * **Wan Yi Seow** - *performed code testing and created documentation* - (https://github.com/seowwy)
 
 
-## License <a name="lic"></a>
-
-See full license [here](license.md).
-
-
 ## Acknowledgments <a name="ack"></a>
 
 * Jolene Goh
 * Shyam Prabhakar
 * Yun-ching Chang
+
+
+## License <a name="lic"></a>
+
+See full license [here](license.md).
+
+
+## Questions <a name='que'></a>
+
+Contact CHEN Kok Hao <chenkh at gis.a-star.edu.sg> and CHOU Shijie Nigel <Nigel_Chou at gis.a-star.edu.sg>
