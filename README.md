@@ -37,6 +37,7 @@ A computer that can run Python, with at least 16 GB of RAM. No non-standard hard
 8.	scikit-image: 0.16.2
 9.	scikit-learn: 0.22.1
 10. scipy: 1.4.1
+11. probe design requires Matlab
 
 ### Specific Software Dependencies: <a name="depreqs"></a>
 
@@ -309,6 +310,7 @@ By default, all small spots are **rejected**. If a value is given, only spots wi
 
 * LHS implementation is from [PyDOE](https://pythonhosted.org/pyDOE/) which is under the *BSD License* (3-Clause). An unmodified version of the code for Latin-Hypercube sampling is [included in the "external" folder](external/doe_lhs.py) so that the user does not need to install the full PyDOE package.
 
+* The probe design script was modified from the Zhuang Lab github (https://github.com/ZhuangLab/MERFISH_analysis/blob/master/example_scripts/library_design_example.m) to 'split' the probes and attach the bridge sequences
 
 
 #### This code uses the following packages that are included in the standard Anaconda distribution
@@ -329,7 +331,7 @@ A version of ```register_translation``` is included in the ["utils" folder](util
 
 * **Nigel Chou** - *main contributor* - (https://github.com/chousn)
 
-* **Mike Huang** - *contributed initial stitching pipeline* - (https://github.com/?)
+* **Mike Huang** - *contributed initial stitching pipeline* - (https://github.com/mikejhuang)
 
 * **Vipul Singhal** - *contributed LHS implementation* - (https://github.com/vipulsinghal02)
 
@@ -346,3 +348,4 @@ The software is available for academic and non-commercial research use. A provis
 * Jolene Goh
 * Shyam Prabhakar
 * Yun-ching Chang
+* Maurice Lee
