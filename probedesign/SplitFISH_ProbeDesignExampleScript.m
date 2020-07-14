@@ -6,6 +6,7 @@
 % We modified the probe design scripts from the Zhuang Lab github
 % https://github.com/ZhuangLab/MERFISH_analysis/blob/master/example_scripts/library_design_example.m
 % to 'split' the probes and attach the bridge sequences
+% All the required functions are in the Functions folder.
 
 %% INPUT for this script
 % % % 1. Path to trDesigner database (this example uses liver).
@@ -30,7 +31,7 @@ close all % close other windows
 %% NAMES and PATHS to be changed are in this section
 
 % Display the name of the library
-libraryName = 'MouseLiverLibrary'; % MouseLiverLibrary is an example of a library name
+libraryName = 'SplitFISH_Library'; % SplitFISH_Library is an example of a library name
 disp(['Your library name is ',libraryName])
 
 selpath = uigetdir('C:\','Select folder where the data is saved');
@@ -60,6 +61,7 @@ xlsFileName = [selpath,'\BridgeSequences.xlsx'];
 %% Load transcriptome
 % Transcriptome is a class from the Zhuang Lab github page
 % https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/Transcriptome.m
+% User can create their own trDesigner object or download an example from our website (Large file size).
 transcriptomeLiver = Transcriptome.Load(liverPath);
 
 %% Load fasta file for transcripts fasta. Downloaded from https://www.gencodegenes.org/mouse/release_M4.html
@@ -89,8 +91,6 @@ disp('Created parallel pool')
 % trDesigner is from  https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/TRDesigner.m
 % OTTable is from https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/OTTable.m
 % OTMap2 is from https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/OTMap2.m
-% trDesigner is from the Zhuang Lab github
-% https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/TRDesigner.m
 % This section may take a few minutes
 % User can create their own trDesigner object or download an example from our website (Large file size).
 
