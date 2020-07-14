@@ -61,11 +61,10 @@ xlsFileName = [selpath,'\BridgeSequences.xlsx'];
 %% Load transcriptome
 % Transcriptome is a class from the Zhuang Lab github page
 % https://github.com/ZhuangLab/MERFISH_analysis/blob/master/probe_construction/Transcriptome.m
-% User can create their own trDesigner object or download an example from our website (Large file size).
+% User can create their own Transcriptome object or download an example from our website (Large file size).
 transcriptomeLiver = Transcriptome.Load(liverPath);
 
 %% Load fasta file for transcripts fasta. Downloaded from https://www.gencodegenes.org/mouse/release_M4.html
-
 disp(['Loading: ' fastaPath]);
 sequences = fastaread(fastaPath); % this is a built-in function from MATLAB
 disp(['Found ' num2str(length(sequences)) ' sequences']);
@@ -124,7 +123,7 @@ for j = 1:length(bridge)
     leftSplit{j} = seqrcomplement(readout{j}(1:9)); % left 9 nucleotides. 
     rightSplit{j} = seqrcomplement(readout{j}(10:end)); % right 9 nucleotides. 
 end
-disp(['The ',num2str(length(bridge)),' bridge sequences have been split'])
+disp(['The ',num2str(length(bridge)),' bridge sequences have been loaded'])
 
 %% Output a fasta file for analysis of the data to compare with FPKM values after the experiment
 % This fasta file has the binary codeword, gene ID, transcript ID, and expected FPKM from database.
@@ -266,7 +265,7 @@ if exist(finalPrimersPath)
     disp(['Deleting ' finalPrimersPath]);
 end
 
-% Build the final oligos by adding the primers
+% Build the final oligos by adding the primers and compiling experiments
 finalOligos = [];
 for m=1
     for i=sum(ESize(1:m))-ESize(m)+1:sum(ESize(1:m))
