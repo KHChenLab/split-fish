@@ -53,10 +53,10 @@ fastaPath = [selpath,'\gencode.vM4.pc_transcripts.fa\gencode.vM4.combined_transc
 trDesignerPath = [selpath,'\tissueTr\targetRegionDesignerObj'];
 
 % Read in the target transcript IDs
-[~,xlsID,~] = xlsread([selpath,'\TranscriptID.xlsx']);
+[~,transcript_xlsID,~] = xlsread([selpath,'\TranscriptID.xlsx']);
 
 % Use only middle column. These are the list of bridge sequences
-xlsFileName = [selpath,'\BridgeSequences.xlsx'];
+bridge_xlsFileName = [selpath,'\BridgeSequences.xlsx'];
 
 %% Load transcriptome
 % Transcriptome is a class from the Zhuang Lab github page
@@ -104,18 +104,20 @@ disp('The various transcriptomes have been loaded.')
 % Line 924 in TRDesigner has been changed from parfor to for because some
 % laptops may have insufficient memory
 % We used a regionLength of 52nt because split probes are constructed using pairs of 25-nt sequences with 2-nt spacing in between the pair
+% Quartet repeats (AAAA, TTTT, GGGG and CCCC), KpnI restriction sites (GGTACC and CCATGG) and EcoRI restriction sites (GAATTC and CTTAAG) were set as forbidden sequences
+% The transcriptome and rRNA specificity table were calculated using a 15-nucleotide seed
 
 genesChosen = trDesigner.DesignTargetRegions(...
     'threePrimeSpace', 2, ...
     'removeForbiddenSeqs', true, ...
     'regionLength', 52, ...
     'specificity', [0.2 1], ...
-    'geneID', xlsID, ...
+    'geneID', transcript_xlsID, ...
     'OTTables', {'rRNA', [0, 0]});
 disp('The target regions for the genes have been designed')
 
 %% Load bridge sequences
-[~,bridge,~] = xlsread(xlsFileName);
+[~,bridge,~] = xlsread(bridge_xlsFileName);
 
 clear readout leftSplit rightSplit
 for j = 1:length(bridge)
@@ -143,7 +145,6 @@ end
 
 for n = 1:NGenes
     commonName = geneNames(strcmp(transcriptIDsHeader, genesChosen(n).id));
-    w = regexp(genesChosen(n).geneName,'\.','split');
     localGeneName = genesChosen(n).geneName;
     isoform = genesChosen(n).id;
     localAbund = transcriptomeLiver.GetAbundanceByName(localGeneName);
@@ -157,12 +158,14 @@ end
 
 
 %% THIS IS MAKING THE PROBE
-% Only one experiment. One primer pair.
+% EIndex keeps track of the experiments in the probe library. ESize keeps track of the number of oligos in the experiment. Both are used later to assign different primers to different experiments.
+% Only one experiment in this example. 
 
 oligos = [];
 EIndex = 1;
 ESize = 0;
 exp = 1;
+
 TileSize = [1:2:72; 2:2:72]; % We use 72 pairs, split into odd and even for each on bits
 
 for a = 1:NGenes
@@ -245,7 +248,7 @@ else
     warning('Found existing primers');
 end
 
-%% Select and add primers to encoding probes
+%% Checking for dimers and hairpins and add used primers to encoding probes
 primers = fastaread(primersPath);
 clear primerprops
 
